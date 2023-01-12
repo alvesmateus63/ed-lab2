@@ -41,7 +41,7 @@ class ArvBin
     int auxContaImpar(NoArv *p);
     int auxContaFolhaImpar(NoArv *p);
     void auxImprimeNivel(NoArv *p, int k, int atual);
-    float auxMediaNivel(NoArv *p, int k, int atual);
+    float auxMediaNivel(NoArv *p, int k, float *soma, int *contador);
 };
 
 #endif // ARVBIN_H_INCLUDED

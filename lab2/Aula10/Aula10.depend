@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1673556185 source:/home/mateus/Documents/ed-lab2/lab2/Aula10/ArvBin.cpp
+1673559229 source:/home/mateus/Documents/ed-lab2/lab2/Aula10/ArvBin.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
 	<sstream>
 	"ArvBin.h"
 
-1673555952 /home/mateus/Documents/ed-lab2/lab2/Aula10/ArvBin.h
+1673559013 /home/mateus/Documents/ed-lab2/lab2/Aula10/ArvBin.h
 	"NoArv.h"
 
 1673282077 /home/mateus/Documents/ed-lab2/lab2/Aula10/NoArv.h
 
-1673556270 source:/home/mateus/Documents/ed-lab2/lab2/Aula10/main.cpp
+1673558019 source:/home/mateus/Documents/ed-lab2/lab2/Aula10/main.cpp
 	<iostream>
 	"ArvBin.h"
 

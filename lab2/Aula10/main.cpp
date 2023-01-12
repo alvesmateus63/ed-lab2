@@ -29,9 +29,9 @@ int main()
     cout << "Altura: " << a1->altura() << endl;
     cout << "Total de impares: " << a1->contaImpar() << endl;
     cout << "Total de folhas impares: " << a1->contaFolhaImpar() << endl;
-    a1->imprimeNivel(0);
+    a1->imprimeNivel(1);
     cout << endl;
-    cout << "Media do nivel: " << a1->mediaNivel(0) << endl;
+    cout << "Media do nivel: " << a1->mediaNivel(1) << endl;
 
 
 

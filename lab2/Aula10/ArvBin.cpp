@@ -285,6 +285,7 @@ int ArvBin::auxContaFolhaImpar(NoArv *p)
 
 void ArvBin::imprimeNivel(int k)
 {
+    cout << "Valores do nivel: ";
     auxImprimeNivel(raiz, k, 0);
 }
 
@@ -294,8 +295,10 @@ void ArvBin::auxImprimeNivel(NoArv *p, int k, int atual)
     if(p != NULL) {
         if(atual == k)
             cout << p->getInfo() << " ";
-        auxImprimeNivel(p->getEsq(), k, atual+1);
-        auxImprimeNivel(p->getDir(), k, atual+1);
+        else if (atual < k) {
+            auxImprimeNivel(p->getEsq(), k, atual+1);
+            auxImprimeNivel(p->getDir(), k, atual+1);
+        }
     }
 }
 
@@ -304,17 +307,24 @@ void ArvBin::auxImprimeNivel(NoArv *p, int k, int atual)
 
 float ArvBin::mediaNivel(int k)
 {
-    auxMediaNivel(raiz, k, 0);
+    float soma = 0;
+    int contador = 0;
+    auxMediaNivel(raiz, k, &soma, &contador);
+    if(contador > 0)
+        return soma / contador;
+    else
+        return 0;
 }
 
-float ArvBin::auxMediaNivel(NoArv *p, int k, int atual)
+float ArvBin::auxMediaNivel(NoArv *p, int k, float *soma, int *contador)
 {
-    if(p != NULL) {
-        int total = auxMediaNivel(p->getEsq(), k, atual+1) + auxMediaNivel(p->getDir(), k, atual+1);
-        if(atual == k) {
-            total += p->getInfo();
+    if(p != NULL && k >=0 ) {
+        if(k == 0) {
+            *soma += p->getInfo();
+            (*contador)++;
         }
-        return total;
+        auxMediaNivel(p->getEsq(), k-1, soma, contador);
+        auxMediaNivel(p->getDir(), k-1, soma, contador);
     }
 }
 
