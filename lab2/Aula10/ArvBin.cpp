@@ -433,6 +433,7 @@ int ArvBin::auxNoMaisDireita(NoArv *p)
 
 
 /// Ex 011
+/*
 int ArvBin::minSubArvore(NoArv *p)
 {
     if(p == NULL) {
@@ -458,10 +459,36 @@ int ArvBin::auxMinSubArvore(NoArv *p, int *menor)
 
 int ArvBin::maxSubArvore(NoArv *p)
 {
+    if(p == NULL) {
+        cout << "Arvore Vazia" << endl;
+        exit(0);
+    }
 
+    int maior = p->getInfo();
+    auxMaxSubArvore(p, &maior);
+    return maior;
 }
 
 int ArvBin::auxMaxSubArvore(NoArv *p, int *maior)
 {
+    if(p != NULL) {
+        if(p->getInfo() > *maior)
+            *maior = p->getInfo();
 
+        auxMin(p->getEsq(), maior);
+        auxMin(p->getDir(), maior);
+    }
+}
+*/
+
+/// Ex012
+
+bool ArvBin::ehABB()
+{
+
+}
+
+bool ArvBin::auxEhABB(NoArv *p)
+{
+    
 }

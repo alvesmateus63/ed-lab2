@@ -38,6 +38,12 @@ int main()
     a1->imprime();
     cout << "No mais esq: " << a1->noMaisEsquerda() << endl;
     cout << "No mais dir: " << a1->noMaisDireita() << endl;
+    NoArv *teste;
+    teste->setInfo(25);
+    teste->setDir(NULL);
+    teste->setEsq(NULL);
+    //cout << "Menor sub: " << a1->minSubArvore() << endl;
+    //cout << "Maior sub: " << a1->maxSubArvore() << endl;
 
     return 0;
 }

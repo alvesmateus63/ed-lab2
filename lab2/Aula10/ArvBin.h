@@ -30,7 +30,7 @@ class ArvBin
     int noMaisDireita();
     int minSubArvore(NoArv *p);
     int maxSubArvore(NoArv *p);
-
+    bool ehABB();
 
   private:
     NoArv *raiz; // ponteiro para o No raiz da arvore
@@ -55,6 +55,7 @@ class ArvBin
     int auxNoMaisDireita(NoArv *p);
     int auxMinSubArvore(NoArv *p, int *menor);
     int auxMaxSubArvore(NoArv *p, int *maior);
+    bool auxEhABB(NoArv *p);
 
 };
 
