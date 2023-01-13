@@ -1,12 +1,12 @@
 #include <iostream>
 #include "ArvBin.h"
-
+#include "ArvBin.cpp"
 
 using namespace std;
 
 int main()
 {
-    /// Função cria
+    /// Funcao cria
 
     ArvBin *vazia = new ArvBin();
     ArvBin *a1 = new ArvBin(); ArvBin *a2 = new ArvBin(); ArvBin *a3 = new ArvBin();
@@ -15,7 +15,7 @@ int main()
     a2->cria(19, vazia, vazia);
     a1->cria(18, a1, a2);
 
-    /// Como a2 já foi enraizado posso usar novamente
+    /// Como a2 jï¿½ foi enraizado posso usar novamente
     a2->cria(38, vazia, vazia);
     a3->cria(14, vazia, vazia);
     a2->cria(25, a2, a3);
@@ -32,8 +32,12 @@ int main()
     a1->imprimeNivel(1);
     cout << endl;
     cout << "Media do nivel: " << a1->mediaNivel(1) << endl;
-
-
+    cout << "Menor Valor: " << a1->min() << endl;
+    cout << "Maior Valor: " << a1->max() << endl;
+    a1->inverte();
+    a1->imprime();
+    cout << "No mais esq: " << a1->noMaisEsquerda() << endl;
+    cout << "No mais dir: " << a1->noMaisDireita() << endl;
 
     return 0;
 }
