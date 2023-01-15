@@ -433,7 +433,7 @@ int ArvBin::auxNoMaisDireita(NoArv *p)
 
 
 /// Ex 011
-/*
+
 int ArvBin::minSubArvore(NoArv *p)
 {
     if(p == NULL) {
@@ -479,10 +479,11 @@ int ArvBin::auxMaxSubArvore(NoArv *p, int *maior)
         auxMin(p->getDir(), maior);
     }
 }
-*/
+
 
 /// Ex012
 
+/*
 bool ArvBin::ehABB()
 {
     return auxEhABB(raiz);
@@ -499,3 +500,4 @@ bool ArvBin::auxEhABB(NoArv *p)
             return true;
     }
 }
+*/

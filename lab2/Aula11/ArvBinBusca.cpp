@@ -72,11 +72,21 @@ NoArv* ArvBinBusca::auxRemove(NoArv *p, int val)
             p = remove1Filho(p);
         else
         {
+            // Menor sub-arvore direita
+            /*
             NoArv *aux = menorSubArvDireita(p);
             int tmp = aux->getInfo();
             p->setInfo(tmp);
             aux->setInfo(val);
             p->setDir(auxRemove(p->getDir(), val));
+            */
+
+            // Maior sub-arvore esquerda
+            NoArv *aux = maiorSubArvEsq(p);
+            int tmp = aux->getInfo();
+            p->setInfo(tmp);
+            aux->setInfo(val);
+            p->setEsq(auxRemove(p->getEsq(), val));
         }
     }
     return p;
@@ -240,6 +250,11 @@ void ArvBinBusca::removeMenor()
 {
     if(!vazia()) {
         auxRemoveMenor(raiz);
+        // Jeito + simples
+        /*
+            int val = maior();
+            remove(val);
+        */
     } else {
         cout << "Arvore Vazia" << endl;
         exit(1);
@@ -256,3 +271,48 @@ void ArvBinBusca::auxRemoveMenor(NoArv *p)
         }
     }
 }
+
+
+/// Ex005
+
+int ArvBinBusca::contaParesCaminho(int x)
+{
+    if(!vazia()) {
+        return auxContaParesCaminho(raiz, x);
+    } else {
+        cout << "Arvore Vazia" << endl;
+        exit(1);
+    }
+}
+
+int ArvBinBusca::auxContaParesCaminho(NoArv *p, int x)
+{
+    if(p->getInfo() < x) {
+        if(p->getInfo() % 2 == 0)
+            return auxContaParesCaminho(p->getDir(), x) + 1;
+        else
+            return auxContaParesCaminho(p->getDir(), x);
+    } else if(p->getInfo() > x) {
+        if(p->getInfo() % 2 == 0)
+            return auxContaParesCaminho(p->getEsq(), x) + 1;
+        else
+            return auxContaParesCaminho(p->getEsq(), x);
+    } else { // Nesse caso a raiz é o proprio valor
+        if(p->getInfo() % 2 == 0)
+            return 1;
+        else    
+            return 0;
+    }
+}
+
+
+/// Ex006
+
+
+NoArv* ArvBinBusca::maiorSubArvEsq(NoArv *p)
+{
+    NoArv *aux = p->getEsq();
+    while(aux->getDir() != NULL)
+        aux = aux->getDir();
+    return aux;
+}   

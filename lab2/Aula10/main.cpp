@@ -8,6 +8,7 @@ int main()
 {
     /// Funcao cria
 
+
     ArvBin *vazia = new ArvBin();
     ArvBin *a1 = new ArvBin(); ArvBin *a2 = new ArvBin(); ArvBin *a3 = new ArvBin();
 
@@ -42,8 +43,6 @@ int main()
     teste->setInfo(25);
     teste->setDir(NULL);
     teste->setEsq(NULL);
-    //cout << "Menor sub: " << a1->minSubArvore() << endl;
-    //cout << "Maior sub: " << a1->maxSubArvore() << endl;
 
     return 0;
 }
