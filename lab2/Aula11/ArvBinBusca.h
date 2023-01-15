@@ -7,15 +7,21 @@ class ArvBinBusca
 public:
     ArvBinBusca();
     ~ArvBinBusca();
-    bool vazia(); // verifica se a árvore está vazia
+    bool vazia(); // verifica se a ï¿½rvore estï¿½ vazia
     bool busca(int val);
     void insere(int val);
     void remove(int val);
     void imprime();
     float mediaCaminho(int ch);
 
+    // ExercÃ­cios
+    int maior();
+    int menor();
+    void removeMaior();
+    void removeMenor();
+
 private:
-    NoArv* raiz; // ponteiro para o No raiz da árvore
+    NoArv* raiz; // ponteiro para o No raiz da ï¿½rvore
     bool auxBusca(NoArv *p, int val);
     NoArv* auxInsere(NoArv *p, int val);
     NoArv* auxRemove(NoArv *p, int val);
@@ -24,6 +30,12 @@ private:
     NoArv* remove1Filho(NoArv *p);
     void imprimePorNivel(NoArv* p, int nivel);
     NoArv* libera(NoArv *p);
+    
+    // ExercÃ­cios
+    int auxMaior(NoArv *p);
+    int auxMenor(NoArv *p);
+    void auxRemoveMaior(NoArv *p);
+    void auxRemoveMenor(NoArv *p);
 };
 
 #endif // ARVBINBUSCA_H_INCLUDED

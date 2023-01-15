@@ -15,7 +15,7 @@ int main()
     a2->cria(19, vazia, vazia);
     a1->cria(18, a1, a2);
 
-    /// Como a2 j� foi enraizado posso usar novamente
+    /// Como a2 ja foi enraizado posso usar novamente
     a2->cria(38, vazia, vazia);
     a3->cria(14, vazia, vazia);
     a2->cria(25, a2, a3);

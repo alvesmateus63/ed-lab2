@@ -159,3 +159,100 @@ float ArvBinBusca::mediaCaminho(int ch)
     }
     return (float)soma/cont;
 }
+
+/* Exercícios */
+
+/// Ex001
+
+int ArvBinBusca::maior()
+{
+    if(!vazia()) {
+        return auxMaior(raiz);
+    } else {
+        cout << "Arvore Vazia" << endl;
+        exit(1);
+    }   
+}
+
+int ArvBinBusca::auxMaior(NoArv *p)
+{
+    if(p != NULL) {
+        if(p->getDir() == NULL) {
+            return p->getInfo();
+        } else {
+            auxMaior(p->getDir());
+        }
+    }
+}
+
+
+/// Ex002
+
+int ArvBinBusca::menor()
+{
+    if(!vazia()) {
+        return auxMenor(raiz);
+    } else {
+        cout << "Arvore Vazia" << endl;
+        exit(1);
+    }
+}
+
+int ArvBinBusca::auxMenor(NoArv *p)
+{
+    if(p != NULL) {
+        if(p->getEsq() == NULL) {
+            return p->getInfo();
+        } else {
+            auxMenor(p->getEsq());
+        }
+    }
+}
+
+
+/// Ex003
+
+void ArvBinBusca::removeMaior()
+{
+    if(!vazia()) {
+        auxRemoveMaior(raiz);
+    } else {
+        cout << "Arvore Vazia" << endl;
+        exit(1);
+    }
+}
+
+void ArvBinBusca::auxRemoveMaior(NoArv *p)
+{
+    if(p != NULL) {
+        if(p->getDir() == NULL) {
+            remove(p->getInfo());
+        } else {
+            auxRemoveMaior(p->getDir());
+        }
+    }
+}
+
+
+/// Ex004
+
+void ArvBinBusca::removeMenor()
+{
+    if(!vazia()) {
+        auxRemoveMenor(raiz);
+    } else {
+        cout << "Arvore Vazia" << endl;
+        exit(1);
+    }
+}
+
+void ArvBinBusca::auxRemoveMenor(NoArv *p)
+{
+    if(p != NULL) {
+        if(p->getEsq() == NULL) {
+            remove(p->getInfo());
+        } else {
+            auxRemoveMenor(p->getEsq());
+        }
+    }
+}

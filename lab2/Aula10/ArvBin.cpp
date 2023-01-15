@@ -485,10 +485,17 @@ int ArvBin::auxMaxSubArvore(NoArv *p, int *maior)
 
 bool ArvBin::ehABB()
 {
-
+    return auxEhABB(raiz);
 }
 
 bool ArvBin::auxEhABB(NoArv *p)
 {
-    
+    if(p != NULL) {
+        if(valor > p-getEsq())
+            return false;
+        else if (valor < p->getDir())
+            return false;
+        else
+            return true;
+    }
 }
