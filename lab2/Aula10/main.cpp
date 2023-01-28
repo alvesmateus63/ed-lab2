@@ -8,7 +8,6 @@ int main()
 {
     /// Funcao cria
 
-
     ArvBin *vazia = new ArvBin();
     ArvBin *a1 = new ArvBin(); ArvBin *a2 = new ArvBin(); ArvBin *a3 = new ArvBin();
 
